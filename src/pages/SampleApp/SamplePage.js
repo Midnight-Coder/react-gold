@@ -1,28 +1,33 @@
 import Spinner from 'components/Common/Spinner';
 import Toast from 'components/Common/Toast';
 import HelloWorld from 'components/SampleApp/HelloWorld';
+import { fetchSampleStatus } from 'pages/SampleApp/SamplePage.redux';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchStatus } from 'redux/actions/SampleActions';
+import { CATEGORY_NAMES } from 'synthetic-redux';
 
 
 const SamplePage = () => {
-  const status = useSelector((state) => state.sample.status);
-  const error = useSelector((state) => state.sample.error);
+  const response = useSelector((state) => state.sample.status.response);
   const dispatch = useDispatch();
 
-  React.useEffect(() => { dispatch(fetchStatus()); }, [dispatch]);
+  React.useEffect(() => {
+    dispatch(fetchSampleStatus.ignite());
+  }, [dispatch]);
 
-  if (!status && !error) { return <Spinner />; }
-  else if (error) {
+  if (!response || response[CATEGORY_NAMES.IGNITE]) { return <Spinner />; }
+  else if (response.exception) {
+    return (<HelloWorld status='Missing API Configuration' />);
+  }
+  else if (response.error) {
     return (
       <>
-        <Toast message={error} type='error' />
-        <HelloWorld status={error} />
+        <Toast message={response.error} type='error' />
+        <HelloWorld status='Error in API' />
       </>
     );
   }
-  else { return <HelloWorld status={status} />; }
+  else { return <HelloWorld status={response.status} />; }
 };
 
 export default SamplePage;

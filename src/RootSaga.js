@@ -1,5 +1,5 @@
+import { SampleSaga } from 'pages/SampleApp/SamplePage.redux';
 import { all, fork } from 'redux-saga/effects';
-import SampleSaga from 'redux/saga/SampleSaga';
 
 
 const sagas = {
