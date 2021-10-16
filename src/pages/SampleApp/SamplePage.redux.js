@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import { all } from 'redux-saga/effects';
 import { SAMPLE } from 'redux/Types';
 import { SyntheticRedux } from 'synthetic-redux';
-import sample from 'utils/urlConstants';
+import sample from 'utils/apiUrls';
 
 
 const fetchSampleStatus = new SyntheticRedux({
