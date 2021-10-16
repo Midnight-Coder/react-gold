@@ -61,7 +61,7 @@ jobs:
 
       # build and push Docker image
       - run:
-          name: Build palantir Docker image
+          name: Build Docker image
           command: |
             TAG=$CIRCLE_BRANCH-$CIRCLE_BUILD_NUM
             docker tag $DOCKERHUB_REPOSITORY/$CIRCLE_PROJECT_REPONAME:latest $DOCKERHUB_REPOSITORY/$CIRCLE_PROJECT_REPONAME:$TAG
