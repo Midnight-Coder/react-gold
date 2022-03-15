@@ -23,21 +23,24 @@ const _fetch = async (url, { method, ...rest }) => {
 };
 
 const http = {
-  get: async (url) => {
-    const response = await _fetch(url, { method: 'GET' });
-    return response;
-  },
+  delete: async (url) => _fetch(url, { method: 'DELETE' }),
 
-  post: async (url, payload) => {
-    const response = await _fetch(
-      url,
-      {
-        method: 'POST',
-        body: JSON.stringify(payload)
-      }
-    );
-    return response;
-  }
+  get: async (url) => _fetch(url, { method: 'GET' }),
+
+  patch: async (url, payload) => _fetch(url, { method: 'PATCH', body: JSON.stringify(payload) }),
+
+  post: async (url, payload) => _fetch(url, { method: 'POST', body: JSON.stringify(payload) }),
+
+  postFile: async (url, body) => _fetch(url, {
+    method: 'POST',
+    body,
+    otherHeaders: new Headers([
+      ['Content-Type', null]
+    ])
+  }),
+
+  put: async (url, payload) => _fetch(url, { method: 'PUT', body: JSON.stringify(payload) })
+
 };
 
 export default http;
