@@ -1,5 +1,2 @@
-export const SAMPLE = {
-  FETCH_STATUS: 'FETCH_STATUS'
-  // FETCH_STATUS_ERROR: 'FETCH_STATUS_ERROR',
-  // FETCH_STATUS_SUCCESS: 'FETCH_STATUS_SUCCESS'
-};
+// eslint-disable-next-line import/prefer-default-export
+export const SAMPLE = { FETCH_STATUS: 'FETCH_STATUS' };

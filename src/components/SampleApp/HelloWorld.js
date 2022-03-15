@@ -7,21 +7,19 @@ import { HelpOutline } from '@material-ui/icons';
 import React from 'react';
 
 
-const HelloWorld = ({ status }) => (
-  <Card>
-    <CardContent>
-      <Typography paragraph variant='h1' color='primary'>Welcome To React-Gold</Typography>
-      <Box display='flex' justifyContent='flex-start'>
-        <Typography component='span' variant='subtitle1'>Gold Standard for a SPA in 2020</Typography>
-        <Tooltip title='This is a boilerplate and code structure demonstration.
-      The packages have not been updated since 2020'
-        >
-          <HelpOutline style={{ fontSize: 15 }} />
-        </Tooltip>
-      </Box>
-      <Typography variant='body2'>{`API Status: ${status}`}</Typography>
-    </CardContent>
-  </Card>
-);
-
-export default HelloWorld;
+export default function HelloWorld({ status }) {
+  return (
+    <Card>
+      <CardContent>
+        <Typography paragraph variant='h1' color='primary'>Welcome To React-Gold</Typography>
+        <Box display='flex' justifyContent='flex-start'>
+          <Typography component='span' variant='subtitle1'>Gold Standard for a SPA in 2020</Typography>
+          <Tooltip title='This is a boilerplate and code structure demonstration built in 2020'>
+            <HelpOutline style={{ fontSize: 15 }} />
+          </Tooltip>
+        </Box>
+        <Typography variant='body2'>{`API Status: ${status}`}</Typography>
+      </CardContent>
+    </Card>
+  );
+}

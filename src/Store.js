@@ -6,7 +6,9 @@ import RootSaga from './RootSaga';
 
 const getStore = () => {
   const composeEnhancers = typeof window === 'object'
-    && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+  // eslint-disable-next-line no-underscore-dangle
+  && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    // eslint-disable-next-line no-underscore-dangle
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose;
   const sagaMiddleware = createSagaMiddleware();
   const enhancers = composeEnhancers(applyMiddleware(sagaMiddleware));

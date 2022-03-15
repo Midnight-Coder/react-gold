@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   success: { color: theme.palette.primary }
 }));
 
-const Toast = ({ message, type = 'success' }) => {
+export default function Toast({ message, type = 'success' }) {
   const classes = useStyles();
   const [isOpen, toggleOpen] = React.useState(true);
   return (
@@ -30,6 +30,4 @@ const Toast = ({ message, type = 'success' }) => {
       />
     </Snackbar>
   );
-};
-
-export default Toast;
+}

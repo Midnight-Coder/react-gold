@@ -8,17 +8,17 @@ import Store from 'Store';
 import Theme from 'Theme';
 
 
-const App = () => (
-  <BrowserRouter>
-    <Provider store={Store}>
-      <ThemeProvider theme={Theme}>
-        <CssBaseline />
-        <div className='App'>
-          <Router />
-        </div>
-      </ThemeProvider>
-    </Provider>
-  </BrowserRouter>
-);
-
-export default App;
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Provider store={Store}>
+        <ThemeProvider theme={Theme}>
+          <CssBaseline />
+          <div className='App'>
+            <Router />
+          </div>
+        </ThemeProvider>
+      </Provider>
+    </BrowserRouter>
+  );
+}

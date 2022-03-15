@@ -4,10 +4,9 @@ import HelloWorld from 'components/SampleApp/HelloWorld';
 import { fetchSampleStatus } from 'pages/SampleApp/SamplePage.redux';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { CATEGORY_NAMES } from 'synthetic-redux';
 
 
-const SamplePage = () => {
+export default function SamplePage() {
   const response = useSelector((state) => state.sample.status.response);
   const dispatch = useDispatch();
 
@@ -15,7 +14,9 @@ const SamplePage = () => {
     dispatch(fetchSampleStatus.ignite());
   }, [dispatch]);
 
-  if (!response || response[CATEGORY_NAMES.IGNITE]) { return <Spinner />; }
+  if (!response || response.isLoading) {
+    return (<Spinner />);
+  }
   else if (response.exception) {
     return (<HelloWorld status='Missing API Configuration' />);
   }
@@ -27,7 +28,7 @@ const SamplePage = () => {
       </>
     );
   }
-  else { return <HelloWorld status={response.status} />; }
-};
-
-export default SamplePage;
+  else {
+    return <HelloWorld status={response.status} />;
+  }
+}

@@ -4,7 +4,6 @@ const _fetch = async (url, { method, ...rest }) => {
     ['Accept', 'application/json'],
     ['Access-Control-Allow-Credentials', true],
     ['Access-Control-Allow-Origin', true],
-    /* This should always be in localStorage irrespective of the cache used */
     ['Content-Type', 'application/json']
   ]);
 
@@ -30,11 +29,13 @@ const http = {
   },
 
   post: async (url, payload) => {
-    const response = await _fetch(url,
+    const response = await _fetch(
+      url,
       {
         method: 'POST',
         body: JSON.stringify(payload)
-      });
+      }
+    );
     return response;
   }
 };

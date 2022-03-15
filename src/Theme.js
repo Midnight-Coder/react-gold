@@ -1,13 +1,13 @@
 import {
   blueGrey, lime, orange, red, teal
 } from '@material-ui/core/colors';
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createTheme } from '@material-ui/core/styles';
 
 
 const htmlFontSize = 18;
 const fontSize = 16;
 
-const Theme = createMuiTheme({
+const Theme = createTheme({
   palette: {
     primary: {
       main: teal[500]
