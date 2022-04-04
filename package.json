@@ -1,23 +1,29 @@
 {
-  "name": "react-gold",
-  "version": "1.0.0",
+  "name": "shadowfax",
+  "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.10.2",
-    "@material-ui/icons": "^4.9.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-redux": "^7.2.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "5.0.0",
-    "redux": "^4.0.5",
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.5.1",
+    "@mui/material": "^5.5.1",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^6.2.2",
+    "react-scripts": "^5.0.0",
+    "redux": "^4.1.2",
     "redux-saga": "^1.1.3",
-    "synthetic-redux": "^1.1.1"
+    "synthetic-redux": "^1.1.1",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "build": "react-scripts build",
     "lint": "eslint .",
-    "start": "HTTPS=true REACT_APP_ENV=DEV PORT=4140 react-scripts start",
+    "start": "HTTPS=true SSL_CRT_FILE=localhost.pem REACT_APP_ENV=DEV PORT=4444 react-scripts start",
     "test": "react-scripts test"
   },
   "eslintConfig": {

@@ -1,8 +1,8 @@
-import Button from '@material-ui/core/Button';
-import Snackbar from '@material-ui/core/Snackbar';
-import SnackbarContent from '@material-ui/core/SnackbarContent';
-import { makeStyles } from '@material-ui/core/styles';
-import Close from '@material-ui/icons/Close';
+import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import SnackbarContent from '@mui/material/SnackbarContent';
+import { makeStyles } from '@mui/material/styles';
+import CloseIcon from '@mui/icons-material/Close';
 import React from 'react';
 
 
@@ -24,7 +24,7 @@ export default function Toast({ message, type = 'success' }) {
       open={isOpen}
     >
       <SnackbarContent
-        action={<Button color='inherit' onClick={() => toggleOpen(false)}><Close /></Button>}
+        action={<Button color='inherit' onClick={() => toggleOpen(false)}><CloseIcon /></Button>}
         classes={{ root: classes[type] }}
         message={message}
       />

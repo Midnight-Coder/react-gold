@@ -1,7 +1,7 @@
 import {
   blueGrey, lime, orange, red, teal
-} from '@material-ui/core/colors';
-import { createTheme } from '@material-ui/core/styles';
+} from '@mui/material/colors';
+import { createTheme } from '@mui/material/styles';
 
 
 const htmlFontSize = 18;
