@@ -1,6 +1,6 @@
 import Spinner from 'components/Common/Spinner';
 import Toast from 'components/Common/Toast';
-import HelloWorld from 'components/SampleApp/HelloWorld';
+import HelloWorld from 'pages/SampleApp/components/HelloWorld';
 import { fetchSampleStatus } from 'pages/SampleApp/SamplePage.redux';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
