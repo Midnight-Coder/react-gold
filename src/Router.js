@@ -1,18 +1,18 @@
 import SamplePage from 'pages/SampleApp/SamplePage';
 import React from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
 
 export default function Router() {
   return (
-    <Switch>
+    <Routes>
       <Route
         path='/sample'
-        component={SamplePage}
+        element={<SamplePage />}
         exact
       />
-      <Redirect from='/' to='/sample' />
-      <Redirect from='*' to='/404' />
-    </Switch>
+      <Route path='/' element={<Navigate to='/sample' replace />} />
+      <Route path='*' element={<Navigate to='/404' replace />} />
+    </Routes>
   );
 }
