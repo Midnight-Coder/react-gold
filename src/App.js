@@ -10,6 +10,7 @@ import Theme from 'Theme';
 
 export default function App() {
   return (
+  <React.StrictMode>
     <BrowserRouter>
       <Provider store={Store}>
         <ThemeProvider theme={Theme}>
@@ -20,5 +21,6 @@ export default function App() {
         </ThemeProvider>
       </Provider>
     </BrowserRouter>
+  </React.StrictMode>
   );
 }

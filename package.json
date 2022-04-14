@@ -1,6 +1,6 @@
 {
-  "name": "shadowfax",
-  "version": "0.0.0",
+  "name": "react-gold",
+  "version": "1.1.0",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.8.2",
