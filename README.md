@@ -1,3 +1,7 @@
+
+# Deprecation Notice
+This has been deprecated in favor of its [TSX version](https://github.com/Midnight-Coder/react-gold-tsx)
+
 # React Gold
 
 Skeleton SPA; ready for production.
